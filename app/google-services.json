@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "174347109993",
+    "project_id": "sampleapp-dd718",
+    "storage_bucket": "sampleapp-dd718.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:174347109993:android:28b27dae8c379c7889c4f8",
+        "android_client_info": {
+          "package_name": "com.vikravch.sampleapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTwuKk7b7q_-AQD5JPqmgCaHA9QpYxrdU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,7 +1,8 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
-    //alias(libs.plugins.kotlinAndroidKsp)
+    alias(libs.plugins.kotlinAndroidKsp)
+    alias(libs.plugins.hiltAndroid)
 }
 
 android {
@@ -43,8 +44,11 @@ dependencies {
 
     implementation(libs.room)
     //annotationProcessor(libs.room.compiler)
-    //ksp(libs.room.compiler)
+    ksp(libs.room.compiler)
     implementation(libs.room.ktx)
     testImplementation(libs.room.testing)
     implementation(libs.room.paging)
+
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
 }

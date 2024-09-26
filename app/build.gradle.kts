@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.kotlinAndroidKsp)
     alias(libs.plugins.hiltAndroid)
+    alias(libs.plugins.google.services)
 }
 
 android {
@@ -42,17 +43,30 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.1"
+        kotlinCompilerExtensionVersion = "1.5.10"
     }
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
             excludes += "/META-INF/gradle/incremental.annotation.processors"
+            excludes += "META-INF/INDEX.LIST"
+            excludes += "META-INF/*.SF"
+            excludes += "META-INF/*.DSA"
+            excludes += "META-INF/*.RSA"
         }
     }
 }
 
 dependencies {
+    implementation(project(":core"))
+    implementation(project(":presentation:compose-core"))
+    implementation(project(":data:retrofit-network"))
+    implementation(project(":features:simple_feature:presentation"))
+    implementation(project(":features:simple_feature:domain"))
+    implementation(project(":data:room-database"))
+    implementation(project(":features:simple_feature:data"))
+    implementation(project(":data:ktor-network"))
+    implementation(project(":data:firestore-database"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -74,8 +88,12 @@ dependencies {
 
     // hilt
     implementation(libs.hilt.android)
-    implementation(libs.hilt.compiler)
+    //implementation(libs.hilt.compiler)
     implementation(libs.hilt.navigation.compose)
+    ksp(libs.hilt.compiler)
     //Timber
     implementation(libs.timber)
+
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.firestore)
 }
