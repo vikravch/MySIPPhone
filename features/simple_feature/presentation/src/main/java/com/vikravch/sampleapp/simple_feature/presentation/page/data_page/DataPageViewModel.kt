@@ -1,9 +1,8 @@
-package com.vikravch.sampleapp.simple_feature.presentation.page
+package com.vikravch.sampleapp.simple_feature.presentation.page.data_page
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.vikravch.sampleapp.simple_feature.domain.repository.QuoteRepository
 import com.vikravch.sampleapp.simple_feature.domain.use_case.quote.QuoteUseCases
 import com.vikravch.sampleapp.simple_feature.domain.use_case.user.UsersUseCases
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -19,13 +18,6 @@ class DataPageViewModel @Inject constructor(
 
     fun onEvent(event: DataPageEvent) {
         when (event) {
-            is DataPageEvent.GetQuote -> {
-                viewModelScope.launch{
-                    val resultData = quoteUseCases.getQuote().getOrNull()
-                    Log.d("ViewModel", "Quote: $resultData")
-                }
-            }
-
             is DataPageEvent.AddUser -> {
                 viewModelScope.launch(Dispatchers.IO){
                     val resultData = usersUseCases.addUser(event.user).getOrNull()
