@@ -12,41 +12,43 @@ import javax.inject.Inject
 
 @HiltViewModel
 class DataPageViewModel @Inject constructor(
-    private val quoteUseCases: QuoteUseCases,
     private val usersUseCases: UsersUseCases
 ): ViewModel() {
 
     fun onEvent(event: DataPageEvent) {
+
+        val (getAllUsers, getUser, addUser, updateUser, deleteUser) = usersUseCases
+
         when (event) {
             is DataPageEvent.AddUser -> {
                 viewModelScope.launch(Dispatchers.IO){
-                    val resultData = usersUseCases.addUser(event.user).getOrNull()
+                    val resultData = addUser(event.user).getOrNull()
                     Log.d("ViewModel", "Add User: $resultData")
                 }
             }
             is DataPageEvent.DeleteUser -> {
                 viewModelScope.launch(Dispatchers.IO){
-                    val resultData = usersUseCases.deleteUser(event.userId)
+                    val resultData = deleteUser(event.userId)
                     Log.d("ViewModel", "Delete User: $resultData")
                 }
             }
 
             is DataPageEvent.GetUser -> {
                 viewModelScope.launch(Dispatchers.IO){
-                    val resultData = usersUseCases.getAllUsers().getOrNull()
+                    val resultData = getUser(event.userId).getOrNull()
                     Log.d("ViewModel", "Users: $resultData")
                 }
             }
             is DataPageEvent.UpdateUser -> {
                 viewModelScope.launch(Dispatchers.IO){
-                    val resultData = usersUseCases.updateUser(event.user).getOrNull()
+                    val resultData = updateUser(event.user).getOrNull()
                     Log.d("ViewModel", "Update User: $resultData")
                 }
             }
 
             DataPageEvent.GetAllUsers -> {
                 viewModelScope.launch(Dispatchers.IO){
-                    val resultData = usersUseCases.getAllUsers().getOrNull()
+                    val resultData = getAllUsers().getOrNull()
                     Log.d("ViewModel", "Users: $resultData")
                 }
             }

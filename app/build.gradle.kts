@@ -12,12 +12,13 @@ android {
 
     defaultConfig {
         applicationId = "com.vikravch.sampleapp"
-        minSdk = 24
+        minSdk = 26
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "com.vikravch.sampleapp.HiltTestRunner"
+
         vectorDrawables {
             useSupportLibrary = true
         }
@@ -47,6 +48,7 @@ android {
     }
     packaging {
         resources {
+            excludes += "META-INF/*.md"
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
             excludes += "/META-INF/gradle/incremental.annotation.processors"
             excludes += "META-INF/INDEX.LIST"
@@ -79,10 +81,13 @@ dependencies {
     implementation(libs.androidx.material3)
 
     testImplementation(libs.junit)
+    testImplementation(libs.mockk)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
+    androidTestImplementation(libs.mockk.android)
     androidTestImplementation(libs.androidx.ui.test.junit4)
+    androidTestImplementation(libs.truth)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
@@ -96,4 +101,6 @@ dependencies {
 
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.firestore)
+
+    androidTestImplementation(libs.hilt.testing)
 }

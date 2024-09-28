@@ -11,14 +11,14 @@ import com.vikravch.sampleapp.simple_feature.domain.model.User
 import com.vikravch.sampleapp.ui.theme.SampleAppTheme
 
 @Composable
-fun DataPage(modifier: Modifier, viewModel: DataPageViewModel = hiltViewModel()) {
+fun DataPage(modifier: Modifier, viewModel: DataPageViewModel) {
     SampleAppTheme {
         Column(
             modifier = modifier
                 .fillMaxSize()
         ) {
             Text(text = "Data Page")
-            Button(onClick = { viewModel.onEvent(DataPageEvent.GetUser(1)) }) {
+            Button(onClick = { viewModel.onEvent(DataPageEvent.GetAllUsers) }) {
                 Text(text = "Get Users")
             }
             Button(onClick = {

@@ -19,8 +19,11 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.vikravch.sampleapp.simple_feature.presentation.page.data_page.DataPage
+import com.vikravch.sampleapp.simple_feature.presentation.page.data_page.DataPageViewModel
 import com.vikravch.sampleapp.simple_feature.presentation.page.quote_page.QuotePage
+import com.vikravch.sampleapp.simple_feature.presentation.page.quote_page.QuotePageViewModel
 import com.vikravch.sampleapp.ui.theme.SampleAppTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -30,22 +33,30 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            SampleAppTheme {
-                val items = listOf("Data", "Quote")
-                var selectedItem by remember { mutableIntStateOf(0) } // To track the selected item index
-
-                Scaffold(
-                    bottomBar = { BottomBar(items, selectedItem) { selectedItem = it } },
-                    content = { paddingValues ->
-                        // Change content based on the selected item
-                        when (selectedItem) {
-                            0 -> DataPage(modifier = Modifier.padding(paddingValues))
-                            1 -> QuotePage(modifier = Modifier.padding(paddingValues))
-                        }
-                    }
-                )
-            }
+            MainActivityUI()
         }
+    }
+}
+
+@Composable
+fun MainActivityUI(
+    quotePageViewModel: QuotePageViewModel = hiltViewModel(),
+    dataPageViewModel: DataPageViewModel = hiltViewModel()
+) {
+    SampleAppTheme {
+        val items = listOf("Data", "Quote")
+        var selectedItem by remember { mutableIntStateOf(0) } // To track the selected item index
+
+        Scaffold(
+            bottomBar = { BottomBar(items, selectedItem) { selectedItem = it } },
+            content = { paddingValues ->
+                // Change content based on the selected item
+                when (selectedItem) {
+                    0 -> DataPage(modifier = Modifier.padding(paddingValues), viewModel = dataPageViewModel)
+                    1 -> QuotePage(modifier = Modifier.padding(paddingValues), viewModel = quotePageViewModel)
+                }
+            }
+        )
     }
 }
 

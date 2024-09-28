@@ -61,17 +61,18 @@ dependencies {
     implementation(libs.ktor.client.serialization)
     implementation(libs.ktor.logback)
 
-    val room_version = "2.6.1"
-
-    implementation("androidx.room:room-runtime:$room_version")
-    annotationProcessor("androidx.room:room-compiler:$room_version")
-    // To use Kotlin Symbol Processing (KSP)
-    ksp("androidx.room:room-compiler:$room_version")
-    // optional - Kotlin Extensions and Coroutines support for Room
-    implementation("androidx.room:room-ktx:$room_version")
-    // optional - Test helpers
-    testImplementation("androidx.room:room-testing:$room_version")
-
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.firestore)
+
+    implementation(libs.room)
+    annotationProcessor(libs.room.compiler)
+    ksp(libs.room.compiler)
+    implementation(libs.room.ktx)
+    testImplementation(libs.room.testing)
+
+
+    testImplementation(libs.truth)
+    testImplementation(libs.mockk)
+    testImplementation(libs.turbine)
+    testImplementation(libs.mockwebserver)
 }

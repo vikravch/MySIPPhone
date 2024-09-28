@@ -1,6 +1,7 @@
 package com.vikravch.sampleapp.simple_feature.data.di
 
 import com.google.firebase.firestore.FirebaseFirestore
+import com.vikravch.sampleapp.core.NetworkInfo
 import com.vikravch.sampleapp.simple_feature.data.database.dao.UserDao
 import com.vikravch.sampleapp.simple_feature.data.remote.retrofit.QuoteApi
 import com.vikravch.sampleapp.simple_feature.data.repository.QuoteNetworkRetrofitRepository
@@ -30,9 +31,11 @@ object SimpleFeatureDataComponent {
     @Provides
     @Singleton
     fun providesQuoteRepository(
-        quoteApi: QuoteApi
+        quoteApi: QuoteApi,
+        networkInfo: NetworkInfo
     ): QuoteRepository {
-        return QuoteNetworkRetrofitRepository(quoteApi)
+        return QuoteNetworkRetrofitRepository(
+            quoteApi, networkInfo)
     }
 
     /*@Provides
