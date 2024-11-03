@@ -55,8 +55,13 @@ android {
             excludes += "META-INF/*.SF"
             excludes += "META-INF/*.DSA"
             excludes += "META-INF/*.RSA"
+            excludes += "META-INF/INDEX.LIST"
         }
     }
+    lint {
+        abortOnError = true
+    }
+
 }
 
 dependencies {
