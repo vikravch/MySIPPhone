@@ -63,4 +63,19 @@ class SimpleFeatureDataTest {
         assertThat(result.isSuccess).isTrue()
         assertThat(result).isEqualTo(Result.success("Style is genderless"))
     }
+
+    @Test
+    fun `test getQuote error`() = runBlocking{
+        every { networkInfo.isConnected() } returns true
+
+        mockWebServer.enqueue(
+            MockResponse()
+                .setResponseCode(401)
+                .setBody(quoteResponse)
+        )
+
+        val result = quoteRepository.getQuote()
+
+        assertThat(result.isSuccess).isFalse()
+    }
 }
