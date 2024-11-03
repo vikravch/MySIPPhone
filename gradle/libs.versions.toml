@@ -91,4 +91,4 @@ android-library = { id = "com.android.library", version.ref = "agp" }
 jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrainsKotlinJvm" }
 room = { id = "androidx.room", version.ref = "roomVersion" }
 google-services = { id = "com.google.gms.google-services", version.ref = "googleServices" }
-
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
