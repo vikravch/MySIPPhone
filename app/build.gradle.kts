@@ -27,9 +27,9 @@ android {
     signingConfigs {
         getByName("debug") {
             storeFile = file("keystore.jks")
-            storePassword = "Qwerty11"
+            storePassword = "Qwertyuiop11"
             keyAlias = "key0"
-            keyPassword = "Qwerty"
+            keyPassword = "Qwertyuiop"
         }
     }
 
