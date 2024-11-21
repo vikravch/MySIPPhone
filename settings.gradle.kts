@@ -9,6 +9,7 @@ pluginManagement {
         }
         mavenCentral()
         gradlePluginPortal()
+
     }
 }
 dependencyResolutionManagement {
@@ -16,10 +17,24 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+
+        maven { // for com.github.chrisbanes:PhotoView
+            url = uri("https://www.jitpack.io")
+        }
+
+            maven {
+                println("Using CI built SDK from maven repository at https://linphone.org/maven_repository")
+                name = "linphone.org maven repository"
+                url = uri("https://linphone.org/maven_repository")
+                content {
+                    includeGroup("org.linphone")
+                }
+            }
+
     }
 }
 
-rootProject.name = "SampleApp"
+rootProject.name = "MySIPPhone"
 include(":app")
 include(":core")
 include(":data")
@@ -28,9 +43,10 @@ include(":data:firestore-database")
 include(":data:ktor-network")
 include(":data:retrofit-network")
 include(":features")
-include(":features:simple_feature")
-include(":features:simple_feature:data")
-include(":features:simple_feature:domain")
-include(":features:simple_feature:presentation")
+include(":features:sip_telephony")
+include(":features:sip_telephony:data")
+include(":features:sip_telephony:domain")
+include(":features:sip_telephony:presentation")
+
 include(":presentation")
 include(":presentation:compose-core")

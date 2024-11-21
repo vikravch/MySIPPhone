@@ -2,9 +2,66 @@
   "project_info": {
     "project_number": "174347109993",
     "project_id": "sampleapp-dd718",
-    "storage_bucket": "sampleapp-dd718.appspot.com"
+    "storage_bucket": "sampleapp-dd718.firebasestorage.app"
   },
   "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:174347109993:android:75b3c40c27e6ea8589c4f8",
+        "android_client_info": {
+          "package_name": "com.vikravch.myassets"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTwuKk7b7q_-AQD5JPqmgCaHA9QpYxrdU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:174347109993:android:7e8996026c9104c289c4f8",
+        "android_client_info": {
+          "package_name": "com.vikravch.mysipphone"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTwuKk7b7q_-AQD5JPqmgCaHA9QpYxrdU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:174347109993:android:4e5195807b19898d89c4f8",
+        "android_client_info": {
+          "package_name": "com.vikravch.newvideoapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTwuKk7b7q_-AQD5JPqmgCaHA9QpYxrdU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
     {
       "client_info": {
         "mobilesdk_app_id": "1:174347109993:android:28b27dae8c379c7889c4f8",

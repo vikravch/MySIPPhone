@@ -7,11 +7,11 @@ plugins {
 }
 
 android {
-    namespace = "com.vikravch.sampleapp"
+    namespace = "com.vikravch.mysipphone"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.vikravch.sampleapp"
+        applicationId = "com.vikravch.mysipphone"
         minSdk = 26
         targetSdk = 35
         versionCode = 1
@@ -79,10 +79,7 @@ dependencies {
     implementation(project(":core"))
     implementation(project(":presentation:compose-core"))
     implementation(project(":data:retrofit-network"))
-    implementation(project(":features:simple_feature:presentation"))
-    implementation(project(":features:simple_feature:domain"))
     implementation(project(":data:room-database"))
-    implementation(project(":features:simple_feature:data"))
     implementation(project(":data:ktor-network"))
     implementation(project(":data:firestore-database"))
 
@@ -95,6 +92,10 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(project(":features:sip_telephony:data"))
+    implementation(project(":features:sip_telephony:presentation"))
+    implementation(project(":features:sip_telephony"))
+    implementation(project(":features:sip_telephony:domain"))
 
     testImplementation(libs.junit)
     testImplementation(libs.mockk)
@@ -119,4 +120,10 @@ dependencies {
     implementation(libs.firebase.firestore)
 
     androidTestImplementation(libs.hilt.testing)
+
+    implementation(libs.okhttp)
+    implementation(libs.okhttp.logging)
+    //implementation(libs.pjsua2)
+
+    implementation(libs.linphone)
 }

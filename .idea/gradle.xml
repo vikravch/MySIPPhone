@@ -17,10 +17,10 @@
             <option value="$PROJECT_DIR$/data/retrofit-network" />
             <option value="$PROJECT_DIR$/data/room-database" />
             <option value="$PROJECT_DIR$/features" />
-            <option value="$PROJECT_DIR$/features/simple_feature" />
-            <option value="$PROJECT_DIR$/features/simple_feature/data" />
-            <option value="$PROJECT_DIR$/features/simple_feature/domain" />
-            <option value="$PROJECT_DIR$/features/simple_feature/presentation" />
+            <option value="$PROJECT_DIR$/features/sip_telephony" />
+            <option value="$PROJECT_DIR$/features/sip_telephony/data" />
+            <option value="$PROJECT_DIR$/features/sip_telephony/domain" />
+            <option value="$PROJECT_DIR$/features/sip_telephony/presentation" />
             <option value="$PROJECT_DIR$/presentation" />
             <option value="$PROJECT_DIR$/presentation/compose-core" />
           </set>

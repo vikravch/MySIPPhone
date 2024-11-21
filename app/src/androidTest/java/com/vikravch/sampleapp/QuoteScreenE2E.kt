@@ -25,6 +25,8 @@ import dagger.hilt.android.testing.HiltAndroidTest
 import org.junit.Rule
 import org.junit.Test
 import com.google.common.truth.Truth.assertThat
+import com.vikravch.mysipphone.MainActivity
+import com.vikravch.mysipphone.MainActivityUI
 import com.vikravch.sampleapp.simple_feature.data.fake.QuoteFakeRepository
 import com.vikravch.sampleapp.simple_feature.data.fake.UserFakeRepository
 import io.mockk.every

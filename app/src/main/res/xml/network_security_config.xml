@@ -3,4 +3,10 @@
     <domain-config cleartextTrafficPermitted="true">
         <domain includeSubdomains="true">api.kanye.rest</domain>
     </domain-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">212.95.45.157</domain>
+    </domain-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">sip2sip.info</domain>
+    </domain-config>
 </network-security-config>

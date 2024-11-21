@@ -14,6 +14,7 @@ hiltComposeVersion = "1.2.0"
 appcompat = "1.7.0"
 material = "1.12.0"
 jetbrainsKotlinJvm = "1.9.0"
+pjsua2 = "2.14.1"
 roomVersion = "2.6.1"
 retrofitVersion = "2.9.0"
 okhttpVersion = "5.0.0-alpha.2"
@@ -26,6 +27,7 @@ truthVersion = "1.1.3"
 mockkVersion = "1.13.5"
 turbineVersion = "0.7.0"
 mockwebserverVersion = "4.9.3"
+linphone = "5.4.+"
 
 
 [libraries]
@@ -46,6 +48,7 @@ androidx-material3 = { group = "androidx.compose.material3", name = "material3" 
 hilt-android = { group = "com.google.dagger", name = "hilt-android" , version.ref = "hiltVersion"}
 hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler" , version.ref = "hiltVersion"}
 hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose" , version.ref = "hiltComposeVersion"}
+pjsua2 = { module = "com.voismart.pjsip:pjsua2", version.ref = "pjsua2" }
 timber = { group = "com.jakewharton.timber", name = "timber", version = "5.0.1" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
@@ -80,6 +83,7 @@ mockk-android = { group = "io.mockk", name = "mockk-android", version.ref = "moc
 turbine = { group = "app.cash.turbine", name = "turbine", version.ref = "turbineVersion" }
 mockwebserver = { group = "com.squareup.okhttp3", name = "mockwebserver", version.ref = "mockwebserverVersion" }
 hilt-testing = { group = "com.google.dagger", name = "hilt-android-testing", version.ref = "hiltVersion" }
+linphone = { group = "org.linphone", name = "linphone-sdk-android", version.ref = "linphone" }
 
 
 [plugins]
@@ -92,3 +96,4 @@ jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrai
 room = { id = "androidx.room", version.ref = "roomVersion" }
 google-services = { id = "com.google.gms.google-services", version.ref = "googleServices" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+
